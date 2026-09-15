@@ -1,6 +1,8 @@
 node_modules/
 .env
 *.db
+*.db-shm
+*.db-wal
 *.sqlite
 *.sqlite3
 __pycache__/
@@ -8,3 +10,7 @@ __pycache__/
 venv/
 dist/
 .vite/
+logs/
+*.log
+*.png
+test-browser-login.js

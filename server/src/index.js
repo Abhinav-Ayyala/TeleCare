@@ -9,12 +9,13 @@ const doctorRoutes = require('./routes/doctors');
 const patientRoutes = require('./routes/patients');
 const symptomRoutes = require('./routes/symptoms');
 const appointmentRoutes = require('./routes/appointments');
+const prescriptionRoutes = require('./routes/prescriptions');
 const adminRoutes = require('./routes/admin');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 app.use(express.json());
 
 // Initialize DB
@@ -26,6 +27,7 @@ app.use('/api/doctors', doctorRoutes);
 app.use('/api/patients', patientRoutes);
 app.use('/api/symptoms', symptomRoutes);
 app.use('/api/appointments', appointmentRoutes);
+app.use('/api/prescriptions', prescriptionRoutes);
 app.use('/api/admin', adminRoutes);
 
 app.use(errorHandler);
